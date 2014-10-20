@@ -61,13 +61,13 @@ navigator.geolocation.getCurrentPosition(function(position) {
     directionsDisplay.setMap(map);
 
     var input=document.getElementById('search-field');
-    console.log (input)
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
     var searchBox = new google.maps.places.SearchBox(input);
 
     google.maps.event.addListener(searchBox, 'places_changed', function(){
         var places = searchBox.getPlaces();
+
         places.forEach(function(place) {
             var image = {
                 url: place.icon,
@@ -85,36 +85,39 @@ navigator.geolocation.getCurrentPosition(function(position) {
             });
             bounds.extend(place.geometry.location);
             markers.push(marker);
-       }) 
+        }) 
+
         map.fitBounds(bounds);
-    }) 
 
+        if (markers.length >= 2) {
+            var origin = markers[0].position;
+            var destination = markers[markers.length-1].position;
+            var waypoints = markers.slice(1, -1).map(function(marker) {
+                return {
+                    location: marker.position,
+                    stopover: true
+                };
+            });
 
-    //  var request = {
-    //     origin: "N15QJ",
-    //     destination: "Covent Garden, London",
-    //     waypoints: [
-    // {
-    //   location:"Shoreditch High Street, London",
-    //   stopover:false
-    // },{,,m   kkkmm
-    //     location:"Monument, London",
-    //     stopover:true
-    // },{
-    //   location:"fleet street, London",
-    //     stopover:true
-    // }],
+            var request = {
+                origin: origin,
+                destination: destination,
+                waypoints: waypoints,
+                travelMode: google.maps.TravelMode.WALKING
+            };
 
+            directionsService.route(request, function(response, status) {
+                if (status === google.maps.DirectionsStatus.OK) {
+                    directionsDisplay.setDirections(response);
+                }
+            });
+        }
+    });
 
-    //     travelMode: google.maps.TravelMode.WALKING
-    // };
-   
-    // directionsService.route(request, function(response, status) {
-    //     if (status == google.maps.DirectionsStatus.OK) {
-    //         directionsDisplay.setDirections(response);
-    //     }
-    // });
-
+    google.maps.event.addListener(map, "bounds_changed", function() {
+        var bounds = map.getBounds();
+        searchBox.setBounds(bounds);
+    });
 }, function(error) {
     alert('code:'    +error.code     + '\n'  + 'message: '  +error.message + '\n');
 }); 
