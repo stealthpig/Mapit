@@ -17,11 +17,13 @@
 /Users/laurenplews/desktop/design/mobile app/mobileapp/platforms/android/assets/www/cordova_plugins.js \
 /Users/laurenplews/desktop/design/mobile app/mobileapp/platforms/android/assets/www/css \
 /Users/laurenplews/desktop/design/mobile app/mobileapp/platforms/android/assets/www/img \
+/Users/laurenplews/desktop/design/mobile app/mobileapp/platforms/android/assets/www/index-old.html \
 /Users/laurenplews/desktop/design/mobile app/mobileapp/platforms/android/assets/www/index.html \
 /Users/laurenplews/desktop/design/mobile app/mobileapp/platforms/android/assets/www/js \
 /Users/laurenplews/desktop/design/mobile app/mobileapp/platforms/android/assets/www/lib \
 /Users/laurenplews/desktop/design/mobile app/mobileapp/platforms/android/assets/www/plugins \
 /Users/laurenplews/desktop/design/mobile app/mobileapp/platforms/android/assets/www/readme.md \
+/Users/laurenplews/desktop/design/mobile app/mobileapp/platforms/android/assets/www/css/ratchet-theme-android.css \
 /Users/laurenplews/desktop/design/mobile app/mobileapp/platforms/android/assets/www/css/source-sans-pro.js \
 /Users/laurenplews/desktop/design/mobile app/mobileapp/platforms/android/assets/www/css/styles.css \
 /Users/laurenplews/desktop/design/mobile app/mobileapp/platforms/android/assets/www/img/Andy_Bernard.jpg \

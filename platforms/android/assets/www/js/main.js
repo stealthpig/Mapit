@@ -57,20 +57,36 @@ navigator.geolocation.getCurrentPosition(function(position) {
 
     directionsDisplay.setMap(map);
 
-    var request = {
-        origin: "N15QJ",
-        destination: "Covent Garden, London",
-        travelMode: google.maps.TravelMode.DRIVING
-    };
-    directionsService.route(request, function(response, status) {
-        if (status == google.maps.DirectionsStatus.OK) {
-            directionsDisplay.setDirections(response);
-        }
-    });
+    //  var request = {
+    //     origin: "N15QJ",
+    //     destination: "Covent Garden, London",
+    //     waypoints: [
+    // {
+    //   location:"Shoreditch High Street, London",
+    //   stopover:false
+    // },{,,m   kkkmm
+    //     location:"Monument, London",
+    //     stopover:true
+    // },{
+    //   location:"fleet street, London",
+    //     stopover:true
+    // }],
+
+
+    //     travelMode: google.maps.TravelMode.WALKING
+    // };
+   
+    // directionsService.route(request, function(response, status) {
+    //     if (status == google.maps.DirectionsStatus.OK) {
+    //         directionsDisplay.setDirections(response);
+    //     }
+    // });
 
 }, function(error) {
     alert('code:'    +error.code     + '\n'  + 'message: '  +error.message + '\n');
 }); 
+
+
 
 // var watchID = navigator.geolocation.watchPosition(function(position) {
 //   // do_something(position.coords.latitude, position.coords.longitude);
